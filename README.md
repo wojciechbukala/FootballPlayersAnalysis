@@ -6,5 +6,5 @@ Statistical Data Analysis - Laboratory
 
 ## Authors
 Wojciech Bukała, 263479
-Aleksander Łyskawa
+Aleksander Łyskawa, 275462 
 
