@@ -467,6 +467,21 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
 
 \end{frame}
 
+\begin{frame}{Reszty modelu — kogo wycena rynkowa zaskakuje?}
+    \begin{center}
+        \includegraphics[width=0.82\textwidth]{regression_residuals.png}
+    \end{center}
+    \vspace{0.1cm}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \small{\textbf{Rynek $>$ model} (niedoszacowani): \textbf{młode gwiazdy} (Haaland, Pedri, Vinícius, Mbappé, Bellingham) — rynek płaci za \textbf{potencjał i markę}, których statystyki nie widzą.}
+        \column{0.5\textwidth}
+        \small{\textbf{Model $>$ rynek} (przeszacowani): \textbf{starsi zawodnicy} (Kane, Modrić, B. Fernandes) — świetne statystyki, ale rynek dyskontuje \textbf{wiek}.}
+    \end{columns}
+    \vspace{0.15cm}
+    \textbf{Wniosek:} największe błędy układają się wzdłuż brakującej cechy — \textbf{wieku}. To tłumaczy niskie $R^2$ lepiej niż sama metryka.
+\end{frame}
+
 %%%
 % Klasyfikacja
 %%%
@@ -547,6 +562,26 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
             \end{center}
     \end{columns}
 
+\end{frame}
+
+\begin{frame}{Ważność cech — które statystyki definiują pozycję?}
+    \begin{columns}[T]
+        \column{0.55\textwidth}
+            \begin{center}
+                \includegraphics[width=0.95\textwidth]{classification_importances.png}
+            \end{center}
+        \column{0.45\textwidth}
+            \small{
+            \begin{itemize}
+                \item Ważność rozkłada się \textbf{równomiernie} — pozycja to cecha \textbf{wielowymiarowa}, nie wynika z jednej statystyki.
+                \item \texttt{interceptions}, \texttt{tackles} → sygnał \textbf{defensywny} (D)
+                \item \texttt{expected\_goals}, \texttt{total\_shots} → sygnał \textbf{ofensywny} (F)
+                \item \texttt{saves} → unikalny marker \textbf{bramkarzy} (G)
+            \end{itemize}
+            }
+            \vspace{0.2cm}
+            \small{Spójne z macierzą błędów: G rozpoznawani niemal bezbłędnie, D$\leftrightarrow$M mylone (te same cechy defensywne).}
+    \end{columns}
 \end{frame}
 
 %%%
@@ -687,6 +722,23 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
             Rating jest normalizowany wewnątrz meczu, wyższy poziom ligi nie przekłada się na wyższe oceny.
         \end{block}
     \end{columns}
+\end{frame}
+
+\begin{frame}{Porównanie lig — wartość rynkowa vs rating}
+    \begin{center}
+        \includegraphics[width=0.95\textwidth]{league_comparison.png}
+    \end{center}
+    \vspace{0.1cm}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \small{\textbf{Wartość rynkowa} skrajnie zróżnicowana: Premier League ($\approx$30M€) to ok.~8× Eredivisie/Super Lig ($\approx$3.7M€).}
+        \column{0.5\textwidth}
+        \small{\textbf{Rating} praktycznie płaski (6.80–6.85) we wszystkich ligach.}
+    \end{columns}
+    \vspace{0.15cm}
+    \begin{block}{Spójne z Hipotezą 2}
+        Rating jest normalizowany wewnątrz ligi/meczu, więc nie odróżnia poziomu rozgrywek — potwierdza to brak istotnej różnicy PL vs reszta.
+    \end{block}
 \end{frame}
 
 
