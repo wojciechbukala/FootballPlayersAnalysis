@@ -40,6 +40,8 @@
 % Zbiór danych
 %%%
 
+\section{Zbiór danych}
+
 \begin{frame}{Zbiór danych}
     Dataset zawiera profile piłkarzy oraz ich statystyki z przebiegu sezonu 2025-26, dla najlepszych lig europejskich. Zawiera:
     \begin{itemize}
@@ -115,10 +117,11 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
     
 \end{frame}
 
+
+
 %%%
 % EDA
 %%%
-
 \section{Eksploracyjna analiza danych}
 
 \begin{frame}[c]
@@ -450,7 +453,7 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
 
 \begin{frame}{Współczynniki regresji liniowej}
     \begin{columns}[T]
-        \column{0.4\textwidth}
+        \column{0.45\textwidth}
             \small{
             \begin{itemize}
                 \item \textbf{Dodatnie:} \texttt{position\_G} (+1.63), \texttt{rating} (+0.51), \texttt{expected\_goals\_per90} (+0.31), \texttt{appearances} (+0.24) - regularność gry i kreowanie sytuacji podnoszą wycenę.
@@ -724,9 +727,9 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
     \end{columns}
 \end{frame}
 
-\begin{frame}{Porównanie lig — wartość rynkowa vs rating}
+\begin{frame}{Porównanie lig - wartość rynkowa vs rating}
     \begin{center}
-        \includegraphics[width=0.95\textwidth]{league_comparison.png}
+        \includegraphics[width=0.8\textwidth]{league_comparison.png}
     \end{center}
     \vspace{0.1cm}
     \begin{columns}[T]
@@ -737,7 +740,7 @@ stats_df.info()  # 3 749 wierszy, 17 kolumn
     \end{columns}
     \vspace{0.15cm}
     \begin{block}{Spójne z Hipotezą 2}
-        Rating jest normalizowany wewnątrz ligi/meczu, więc nie odróżnia poziomu rozgrywek — potwierdza to brak istotnej różnicy PL vs reszta.
+        Rating jest normalizowany wewnątrz ligi/meczu, więc nie odróżnia poziomu rozgrywek, potwierdza to brak istotnej różnicy PL vs reszta.
     \end{block}
 \end{frame}
 
